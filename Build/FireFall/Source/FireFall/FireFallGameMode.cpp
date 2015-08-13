@@ -3,6 +3,7 @@
 #include "FireFall.h"
 #include "FireFallGameMode.h"
 #include "FireFallCharacter.h"
+#include "FireFallHUD.h"
 
 AFireFallGameMode::AFireFallGameMode()
 {
@@ -12,4 +13,6 @@ AFireFallGameMode::AFireFallGameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+
+	HUDClass = AFireFallHUD::StaticClass();
 }
