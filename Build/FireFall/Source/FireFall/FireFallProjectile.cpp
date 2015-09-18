@@ -14,7 +14,7 @@ AFireFallProjectile::AFireFallProjectile()
 	CollisionComp = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
 	CollisionComp->InitSphereRadius(5.0f);
 	CollisionComp->BodyInstance.SetCollisionProfileName("Projectile");
-	CollisionComp->OnComponentHit.AddDynamic(this, &AFireFallProjectile::OnHit);		// set up a notification for when this component hits something blocking
+	//CollisionComp->OnComponentHit.AddDynamic(this, &AFireFallProjectile::OnHit);		// set up a notification for when this component hits something blocking
 
 	// Players can't walk on it
 	CollisionComp->SetWalkableSlopeOverride(FWalkableSlopeOverride(WalkableSlope_Unwalkable, 0.f));
@@ -50,11 +50,11 @@ void AFireFallProjectile::Tick( float DeltaTime )
 
 }
 
-void AFireFallProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
-{
-	if ((OtherActor != NULL) && (OtherActor != this) /*&& (OtherComp != NULL) && OtherComp->IsSimulatingPhysics()*/)
-	{
-		//OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
-		Destroy();
-	}
-}
+//void AFireFallProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+//{
+//	if ((OtherActor != NULL) && (OtherActor != this) /*&& (OtherComp != NULL) && OtherComp->IsSimulatingPhysics()*/)
+//	{
+//		//OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
+//		Destroy();
+//	}
+//}

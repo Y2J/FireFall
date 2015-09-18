@@ -30,6 +30,6 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 
 	/** called when projectile hits something */
-	UFUNCTION()
-	void OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+//	UFUNCTION()
+//	void OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 };
